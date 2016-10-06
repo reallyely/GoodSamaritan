@@ -1,4 +1,4 @@
-import {getEvents} from '../api/getFacebookPosts';
+import {getEvents} from '../api/getFacebook';
 import anEvent from '../components/Event'
 
 import React from 'react';
@@ -28,8 +28,8 @@ class Events extends React.Component {
 	render() {
 		if (this.state.loading === false) {
 			return (
-				<div>
-					<Event data={this.state.events.data.data[0]}/>
+				<div style={{backgroundColor:'blue'}}>
+					<anEvent data={this.state.events.data.data[0]}/>
 				</div>
 			);
 		} else {

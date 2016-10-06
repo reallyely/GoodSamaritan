@@ -14,8 +14,15 @@ class App extends Component {
           <subtitle>demonstrating the love of Jesus Christ through medicine</subtitle>
           <button>I want to help</button>
         </div>
-        <Events></Events>
-        <Posts></Posts>
+				<div style={
+					{margin:"30px",
+					padding:"30px",
+					backgroundColor:"#EEE"
+					}
+				}>
+					<Events></Events>
+					<Posts></Posts>
+				</div>
       </div>
     );
   }

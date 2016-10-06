@@ -1,6 +1,7 @@
 import React from 'react';
-import {getPosts} from '../api/getFacebookPosts';
+import {getPosts} from '../api/getFacebook';
 import Post from '../components/Post';
+import { Flex, Box } from 'reflexbox';
 
 class Posts extends React.Component {
 	constructor(props) {
@@ -28,15 +29,19 @@ class Posts extends React.Component {
 	render() {
 		if (this.state.loading === false) {
 			return (
-				<div>
-					<div className="post-card">
+				<Flex
+					mr={6}
+					ml={6}
+				>
+					<Box
+						className="postWrapper">
 						{
 							this.state.posts.map((post, i) => {
 								return (<div key={i}><Post key={i} data={post} /></div>)
 							})
 						}
-					</div>
-				</div>
+					</Box>
+				</Flex>
 			);
 		} else {
 			return null
