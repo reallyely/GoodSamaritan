@@ -1,5 +1,5 @@
-import {getEvents} from '../api/getFacebook';
-import anEvent from '../components/Event'
+import { getEvents } from '../api/getFacebook';
+import AnEvent from '../components/AnEvent'
 
 import React from 'react';
 
@@ -15,7 +15,6 @@ class Events extends React.Component {
 	componentWillMount() {
 		this.events = getEvents()
 			.then(res => {
-				console.log(res);
 				this.setState({
 					events: res.data.data,
 					loading: false
@@ -28,8 +27,8 @@ class Events extends React.Component {
 	render() {
 		if (this.state.loading === false) {
 			return (
-				<div style={{backgroundColor:'blue'}}>
-					<anEvent data={this.state.events.data.data[0]}/>
+				<div>
+					<AnEvent data={this.state.events[0]}/>
 				</div>
 			);
 		} else {

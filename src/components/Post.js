@@ -15,17 +15,20 @@ const Post = ({data}) => {
 	return (
 		<Flex
 			m={2}
+			align="center"
 			style={{backgroundColor:"white"}}
+			column
 		>
 			<Box
-				justify="flex-start"
-				col={3}
-			>
+				col={3}>
 				<a href={link}>
-					<img src={picture} style={{display:'inline',float:'left'}}/>
+					<img src={picture} />
 				</a>
 			</Box>
-			<Box m={1} p={1} wrap justify="flex-start">
+			<Box m={2} p={2}
+				wrap
+				justify="flex-start"
+				style={{width:"100%", textAlign:'left', borderBottom: "thin solid #6e6e6e"}}>
 				{message}
 			</Box>
 		</Flex>

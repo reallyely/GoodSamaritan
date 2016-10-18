@@ -15,7 +15,10 @@ function getPosts() {
 		'picture',
 	];
 
-	return axios.get(`${fb}/feed?fields=${fields.join(',')}&${accessToken}`)
+	return axios.get(`${fb}/feed?
+		fields=${fields.join(',')}
+		&${accessToken}
+	`)
 }
 
 function getEvents() {

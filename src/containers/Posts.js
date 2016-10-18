@@ -29,19 +29,14 @@ class Posts extends React.Component {
 	render() {
 		if (this.state.loading === false) {
 			return (
-				<Flex
-					mr={6}
-					ml={6}
-				>
-					<Box
-						className="postWrapper">
-						{
-							this.state.posts.map((post, i) => {
-								return (<div key={i}><Post key={i} data={post} /></div>)
-							})
-						}
-					</Box>
-				</Flex>
+				<Box
+					className="postWrapper">
+					{
+						this.state.posts.map((post, i) => {
+							return (<div key={i}><Post key={i} data={post} /></div>)
+						})
+					}
+				</Box>
 			);
 		} else {
 			return null
