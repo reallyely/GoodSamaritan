@@ -7,28 +7,28 @@ const Post = ({data}) => {
 		status_type,
 		updated_time,
 		object_id,
-		picture,
+		full_picture,
 		link,
-		from,
+		from
 	} = data
 
 	return (
 		<Flex
 			m={2}
 			align="center"
-			style={{backgroundColor:"white"}}
 			column
+			style={{
+				border: "thin solid #AAA",
+				backgroundColor: "white"
+			}}
 		>
-			<Box
-				col={3}>
-				<a href={link}>
-					<img src={picture} />
-				</a>
-			</Box>
 			<Box m={2} p={2}
 				wrap
 				justify="flex-start"
-				style={{width:"100%", textAlign:'left', borderBottom: "thin solid #6e6e6e"}}>
+				style={{
+					width:"100%",
+					textAlign:'left',
+				}}>
 				{message}
 			</Box>
 		</Flex>

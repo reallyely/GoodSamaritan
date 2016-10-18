@@ -12,7 +12,7 @@ function getPosts() {
 		'object_id',
 		'link',
 		'from',
-		'picture',
+		'full_picture'
 	];
 
 	return axios.get(`${fb}/feed?
@@ -22,7 +22,19 @@ function getPosts() {
 }
 
 function getEvents() {
-	return axios.get(`${fb}/events?${accessToken}`)
+	let fields = [
+		'name',
+		'description',
+		'start_time',
+		'place',
+		'cover',
+		'attending_count',
+		'ticket_uri'
+	];
+
+	return axios.get(`${fb}/events?
+		fields=${fields.join(',')}
+		&${accessToken}`)
 }
 
 function getPhotos() {
