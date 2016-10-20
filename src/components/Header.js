@@ -2,6 +2,7 @@ import {Flex, Box} from 'reflexbox';
 import React from 'react';
 import _ from 'lodash';
 
+import CallToAction from './CallToAction';
 
 const Header = ({photo}) => {
 
@@ -14,9 +15,8 @@ const Header = ({photo}) => {
 			backgroundPosition: 'center',
 			padding: '20px',
 			color: 'white',
-			fontSize: '3.0rem',
 			height: '30rem',
-			width: '150%',
+			width: '100%',
 			boxShadow: '2px 2px 2px 1px rgba(0, 0, 0, 0.2)',
 
 		},
@@ -25,21 +25,29 @@ const Header = ({photo}) => {
 			backgroundPosition: 'center',
 			height: '100%',
 			position: 'absolute'
-		},
-		noBlur: {
 		}
-
 	}
 	return (
-		<Flex column style={style.appHeader}>
-			<h2 className="french small-caps">Good Samartain Free Clinic</h2>
-
-			<subtitle className="french small-caps">
-				demonstrating the love of Jesus Christ through medicine
+		<Flex column
+			justify="space-around"
+			style={style.appHeader}>
+			<h2
+				className="french small-caps"
+				style={{
+					fontSize: '3.5rem',
+					marginBottom: '-50px'
+				}}>
+				Good Samartain Free Clinic
+			</h2>
+			<subtitle
+				className="french"
+				style={{
+					fontSize: '2.0rem',
+					fontStyle: 'italic',
+				}}>
+				Demonstrate the love of Jesus Christ through medicine
 			</subtitle>
-			<Box>
-				<button>I want to help</button>
-			</Box>
+			<CallToAction />
 		</Flex>
 	)
 }

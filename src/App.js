@@ -23,10 +23,8 @@ class App extends Component {
 	componentWillMount() {
 		this.events = getPhotos()
 			.then(res => {
-				console.log(res);
 				let photo = _.sample(res.data.data).images
 				photo = photo[0].source
-				console.log(photo);
 				this.setState({
 					photo: photo,
 					loading: false

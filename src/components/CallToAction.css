@@ -1,0 +1,14 @@
+.hover {
+	transition-property: transform, box-shadow;
+	transition-duration: 0.3s;
+	transform: translateY(-5px);
+	box-shadow: 0 10px 20px rgba(27, 17, 31, 0.9);
+	cursor: pointer;
+}
+
+.hoverOut {
+	transition-property: transform, box-shadow;
+	transition-duration: 0.3s;
+	transform: translateY(0px);
+	box-shadow: 0 5px 10px rgba(27, 17, 31, 0.9);
+}
