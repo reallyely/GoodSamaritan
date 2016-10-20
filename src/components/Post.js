@@ -15,6 +15,7 @@ const Post = ({data}) => {
 	return (
 		<Flex
 			m={2}
+			p={2}
 			align="center"
 			column
 			style={{
@@ -22,6 +23,9 @@ const Post = ({data}) => {
 				backgroundColor: "white"
 			}}
 		>
+			<Box>
+				<a href={link}><img src={full_picture} style={{maxWidth: '400px'}}/></a>
+			</Box>
 			<Box m={2} p={2}
 				wrap
 				justify="flex-start"

@@ -11,19 +11,6 @@
   height: 80px;
 }
 
-.App-header {
-  background-color: #222;
-	background-image: linear-gradient(0deg, rgba(050, 050, 050, 0.7), rgba(80, 80, 80, 1)),
-		url("http://www.lib.umich.edu/files/libraries/spec_coll/KJV01300.jpg");
-	background-position: center 25%;
-  padding: 20px;
-	width: 100%;
-  color: white;
-	font-size: 3.0rem;
-	height: 25rem;
-	box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
-}
-
 .App-intro {
   font-size: 80px;
 }
