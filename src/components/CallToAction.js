@@ -151,7 +151,7 @@ class Expanded extends React.Component {
 			<Box column {...this.props}>
 				<Flex row
 					justify="space-between">
-					<h4>I'm interested in...</h4>
+					<h4 style={{margin: '0px'}}>I'm interested in...</h4>
 					<FontAwesome
 						inverse={true}
 						size="1x"
