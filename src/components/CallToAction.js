@@ -11,23 +11,19 @@ import './CallToAction.css'
 const style = {
 	bg: {
 		fontSize: '2rem',
-		fontFamily: 'IM Fell French Canon SC, serif',
+		fontFamily: 'Overpass, serif',
+		height: "200px",
 	},
 	button: {
-		backgroundImage: `
-			linear-gradient(0deg, rgb(201, 46, 46),
-			rgb(249, 57, 57))
-		`,
+		background:"#F0544F",
 		borderRadius: '5px',
-		border: 'outset 2px white'
+		color: "#FDF0D5",
+
 	},
 	expanded: {
-		backgroundImage: `
-			linear-gradient(0deg, rgb(201, 46, 46),
-			rgb(249, 57, 57))
-		`,
+		background:"#F0544F",
 		borderRadius: '5px',
-		border: 'outset 2px white'
+		color: "#FDF0D5",
 	}
 }
 
@@ -64,14 +60,13 @@ class CallToAction extends React.Component {
 				style={style.bg}
 			>
 				<TransitionGroup>
-					{
-						this.state.expanded
-							? <Expanded key={1} p={2}
-									onClose={this.handleClick}
-									style={style.expanded}
-								/>
-							: this.state.complete ?
-								null
+					{this.state.expanded
+						? <Expanded key={1} p={2}
+								onClose={this.handleClick}
+								style={style.expanded}
+							/>
+						: this.state.complete
+							? null
 							: <Collapsed key={2}
 									p={2}
 									onMouseEnter={this.handleMouseIn}
@@ -80,7 +75,7 @@ class CallToAction extends React.Component {
 									style={style.button}
 									justify="flex-start"
 									className={this.state.hover ? 'hover' : 'hoverOut'}
-								/>
+							/>
 					}
 				</TransitionGroup>
 			</Flex>
@@ -114,8 +109,14 @@ class Collapsed extends React.Component {
 		return (
 			<Box
 				{...this.props}
-				>
-					I want to help
+			>
+				<span style={{
+					fontWeight: "800",
+					textShadow: "1px 1px 2px rgba(255,255,255,0.5)",
+					backgroundClip: "text",
+				}}>
+					I <span style={{fontSize: '0.85em'}}>WANT TO HELP</span>
+				</span>
 			</Box>
 		)
 	}
@@ -147,37 +148,37 @@ class Expanded extends React.Component {
 		TweenMax.fromTo(el, 0.0, {opacity: 1}, {opacity: 0, onComplete: callback});
 	}
 	render() {
-		return (
-			<Box column {...this.props}>
-				<Flex row
-					justify="space-between">
-					<h4 style={{margin: '0px'}}>I'm interested in...</h4>
-					<FontAwesome
-						inverse={true}
-						size="1x"
-						name="fa-times"
-						onClick={this.props.onClose}
-						onMouseEnter={this.handleMouseIn}
-						onMouseLeave={this.handleMouseOut}
-						style={{cursor:'pointer'}}
-					>{"\uf00d"}</FontAwesome>
+		return (<Box column {...this.props}>
+			<Flex row
+				justify="space-between"
+			>
+				<p className="header1" style={{margin: '0px'}}>I'm interested in...</p>
+				<FontAwesome
+					inverse={true}
+					name="times"
+					onClick={this.props.onClose}
+					onMouseEnter={this.handleMouseIn}
+					onMouseLeave={this.handleMouseOut}
+					style={{cursor:'pointer'}}
+				/>
+			</Flex>
+			<Flex column>
+				<input className="para1" type="text" placeholder="email" style={{border:"0px", padding:"1px"}}/>
+				<Flex m={1} row>
+					{['Counseling', 'Nursing', 'Clerical', 'Management'].map(
+						ele =>
+							<span className="para1" style={{fontSize: "0.5em"}}>
+								<input onClick={this.handleClick} key={ele} type="checkbox" />
+								{ele}
+							</span>
+						)}
 				</Flex>
-				<Flex column>
-					<input type="text" placeholder="email" />
-					<Flex row>
-						{['dancing', 'cleaning', 'child care'].map(
-							ele =>
-								<span>
-									<input onClick={this.handleClick} key={ele} type="checkbox" />
-									{ele}
-								</span>
-							)}
-					</Flex>
-					<button type="button" >Send</button>
-				</Flex>
-			</Box>);
-
+				<button style={{border:"none", backgroundColor: "#D81E5B", width: "100px"}}type="button" >Send</button>
+			</Flex>
+		</Box>
+		);
 	}
 }
+
 
 export default CallToAction;

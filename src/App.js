@@ -39,7 +39,7 @@ class App extends Component {
     return (
       <Flex column align="center" className="App">
 				<Header photo={this.state.photo}/>
-				<Flex className="container french body" justify="center" align="center" m={6} column>
+				<Flex className="container body" justify="center" align="center" m={2} column>
 					<Events></Events>
 					<Posts></Posts>
 				</Flex>

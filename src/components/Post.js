@@ -1,5 +1,6 @@
 import React from 'react';
 import { Flex, Box } from 'reflexbox';
+import moment from 'moment';
 
 const Post = ({data}) => {
 	let {
@@ -16,25 +17,45 @@ const Post = ({data}) => {
 		<Flex
 			m={2}
 			p={2}
-			align="center"
+			justify="flex-start"
 			column
 			style={{
-				border: "thin solid #AAA",
-				backgroundColor: "white"
+				backgroundColor: "#E4E7D1",
+				boxShadow: "0px 5px 5px rgba(15, 15, 15, 0.25)",
 			}}
 		>
-			<Box>
-				<a href={link}><img src={full_picture} style={{maxWidth: '400px'}}/></a>
-			</Box>
-			<Box m={2} p={2}
-				wrap
-				justify="flex-start"
-				style={{
-					width:"100%",
-					textAlign:'left',
-				}}>
-				{message}
-			</Box>
+			<Flex
+				m={0}
+				p={1}
+				row
+				justify="flex-end">
+				<h3 style={{margin: 0, padding: 0}} className="header1">{moment(updated_time).format('dddd, DD MMMM YYYY')}</h3>
+			</Flex>
+			{full_picture
+					? <Box>
+							<a href={link}><img src={full_picture} style={{maxWidth: '400px'}}/></a>
+						</Box>
+					: null
+			}
+			{message
+					? <Box m={2} p={2}
+						className="para1"
+						wrap
+						justify="flex-start"
+						style={{
+							width:"100%",
+							textAlign:'left',
+						}}>
+							{message.split("\n").map((item) => (
+							<span>
+								{item}
+								<br/>
+							</span>
+							))}
+						</Box>
+					: null
+				}
+
 		</Flex>
 	)
 }

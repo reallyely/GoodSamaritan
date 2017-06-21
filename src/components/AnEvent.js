@@ -48,7 +48,8 @@ const AnEvent = ({data}) => {
 			</Flex>
 			<Box style={{
 				textAlign: "left",
-			}}>
+			}}
+			className="para1">
 				{description}
 			</Box>
 		</Flex>

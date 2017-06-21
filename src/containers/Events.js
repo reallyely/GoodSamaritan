@@ -15,8 +15,15 @@ class Events extends React.Component {
 	componentWillMount() {
 		this.events = getEvents()
 			.then(res => {
+				let events = res.data.events.data
+				let event = Array.isArray(events) ? events[0] : events
+
+				if (!new Date(event.start_time) < new Date()) {
+					event = undefined
+				}
+
 				this.setState({
-					events: res.data.data,
+					event,
 					loading: false
 				});
 				return res;
@@ -28,7 +35,7 @@ class Events extends React.Component {
 		if (this.state.loading === false) {
 			return (
 				<div>
-					<AnEvent data={this.state.events[0]}/>
+					<AnEvent data={this.state.event}/>
 				</div>
 			);
 		} else {
