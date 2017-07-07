@@ -1,45 +1,43 @@
-import {Flex} from 'reflexbox';
+import {Flex, Box} from 'reflexbox';
 import React from 'react';
 import _ from 'lodash';
-import banner from '../../public/banner.jpg'
 
+import GoodSamWhite from '../../public/GoodSamWhite.png';
 import CallToAction from './CallToAction';
 
 const Header = ({photo}) => {
-	console.log(banner);
 	let style = {
 		appHeader: {
-			backgroundImage: banner,
-			backgroundPosition: 'center',
-			backgroundRepeat: 'no-repeat',
+			overflow: 'hidden',
 			padding: '20px',
-			color: '#331832',
+			color: '#FAFAFA',
 			width: '100%',
-			// boxShadow: '2px 2px 2px 1px rgba(0, 0, 0, 0.2)',
+			textShadow: "#222 1px 0 5px",
 		}
 	}
+
 	return (
 		<Flex column
-				justify="space-around"
-				style={style.appHeader}
-			>
-			<h2
-				className="header1"
-				style={{
-					fontSize: '3.5rem',
-					marginBottom: '-50px'
-				}}>
-				Good Samaritain Free Clinic
-			</h2>
-			<subtitle
-				className="header1"
+			justify="space-around"
+			style={style.appHeader}
+		>
+			<Box>
+				<img src={GoodSamWhite} style={{maxWidth:"100%"}}/>
+			</Box>
+			<subtitle className="header1"
 				style={{
 					fontSize: '2.0rem',
 					fontStyle: 'italic',
-				}}>
-				Demonstrate the love of Christ through medicine
+				}}
+			>
+				Urgent, Chronic, and Spiritual care
 			</subtitle>
-			<CallToAction />
+			<subtitle className="header1">121 N Queen St, Martinsburg, West Virginia</subtitle>
+			<subtitle className="header1">(304) 264-4049</subtitle>
+			<subtitle className="header1" style={{fontSize: "1.5rem", paddingTop:"2rem"}}>Hours of Operation</subtitle>
+			<subtitle className="header1">Wednesdays and 1st Thursdays at 5:00pm</subtitle>
+			<subtitle className="header1">4th Monday at Immanuel House at 6:30pm</subtitle>
+			<subtitle className="header1"><strong>No Appointment necessary</strong></subtitle>
 		</Flex>
 	)
 }

@@ -13,13 +13,17 @@ function getPosts() {
 		'object_id',
 		'link',
 		'from',
-		'full_picture'
+		'full_picture',
+		'name',
+		'description'
 	];
 
 	return axios.get(`${fb}/${pageID}/feed?
 		fields=${fields.join(',')}
-		&${accessToken}
-	`)
+		&limit=5
+		&${accessToken}`
+		.replace('\n','')
+	);
 }
 
 function getEvents() {
@@ -33,9 +37,7 @@ function getEvents() {
 		'ticket_uri',
 	];
 
-	return axios.get(`${fb}/${pageID}?
-		fields=events.limit(1){${fields.join(',')}}
-		&${accessToken}`)
+	return axios.get(`${fb}/${pageID}?fields=events.limit(1){${fields.join(',')}}&${accessToken}`)
 }
 
 function getPhotos() {

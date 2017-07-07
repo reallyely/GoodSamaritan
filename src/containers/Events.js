@@ -13,7 +13,7 @@ class Events extends React.Component {
 		}
 	}
 	componentWillMount() {
-		this.events = getEvents()
+		getEvents()
 			.then(res => {
 				let events = res.data.events.data
 				let event = Array.isArray(events) ? events[0] : events
@@ -28,7 +28,7 @@ class Events extends React.Component {
 				});
 				return res;
 			})
-			.catch(err => {return err})
+			.catch(console.log)
 	}
 
 	render() {

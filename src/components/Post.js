@@ -10,35 +10,42 @@ const Post = ({data}) => {
 		object_id,
 		full_picture,
 		link,
-		from
+		from,
+		name,
+		description
 	} = data
 
 	return (
 		<Flex
-			m={2}
+			mt={2}
+			mb={2}
 			p={2}
 			justify="flex-start"
 			column
 			style={{
-				backgroundColor: "#E4E7D1",
+				backgroundColor: "rgb(253, 253, 253)",
 				boxShadow: "0px 5px 5px rgba(15, 15, 15, 0.25)",
 			}}
 		>
 			<Flex
-				m={0}
+				m={1}
 				p={1}
 				row
 				justify="flex-end">
 				<h3 style={{margin: 0, padding: 0}} className="header1">{moment(updated_time).format('dddd, DD MMMM YYYY')}</h3>
 			</Flex>
 			{full_picture
-					? <Box>
-							<a href={link}><img src={full_picture} style={{maxWidth: '400px'}}/></a>
-						</Box>
+					? <Flex column>
+							<a href={link}><img src={full_picture} style={{maxWidth: '100%'}}/></a>
+							<Box className="para1" align="flex-start" style={{fontSize: ".75rem"}}>
+								{`From ${name}`}
+								{description ? `: ${description}` : null}
+							</Box>
+						</Flex>
 					: null
 			}
 			{message
-					? <Box m={2} p={2}
+					? <Box m={1} p={1}
 						className="para1"
 						wrap
 						justify="flex-start"
@@ -46,8 +53,8 @@ const Post = ({data}) => {
 							width:"100%",
 							textAlign:'left',
 						}}>
-							{message.split("\n").map((item) => (
-							<span>
+							{message.split("\n").map((item, key) => (
+							<span key={key}>
 								{item}
 								<br/>
 							</span>

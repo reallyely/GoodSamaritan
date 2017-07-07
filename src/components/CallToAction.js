@@ -12,18 +12,18 @@ const style = {
 	bg: {
 		fontSize: '2rem',
 		fontFamily: 'Overpass, serif',
-		height: "200px",
+
 	},
 	button: {
 		background:"#F0544F",
 		borderRadius: '5px',
-		color: "#FDF0D5",
+		color: "#FDFDFD",
 
 	},
 	expanded: {
 		background:"#F0544F",
 		borderRadius: '5px',
-		color: "#FDF0D5",
+		color: "#FDFDFD"
 	}
 }
 
@@ -41,9 +41,7 @@ class CallToAction extends React.Component {
 	}
 
 	handleClick() {
-		this.setState({
-			expanded: !this.state.expanded,
-		})
+		this.setState({expanded: !this.state.expanded})
 	}
 
 	handleMouseIn() {
@@ -59,7 +57,7 @@ class CallToAction extends React.Component {
 				justify="center"
 				style={style.bg}
 			>
-				<TransitionGroup>
+				<TransitionGroup style={{minHeight: "100px"}}>
 					{this.state.expanded
 						? <Expanded key={1} p={2}
 								onClose={this.handleClick}
@@ -75,7 +73,7 @@ class CallToAction extends React.Component {
 									style={style.button}
 									justify="flex-start"
 									className={this.state.hover ? 'hover' : 'hoverOut'}
-							/>
+								/>
 					}
 				</TransitionGroup>
 			</Flex>
@@ -107,9 +105,7 @@ class Collapsed extends React.Component {
 
 	render() {
 		return (
-			<Box
-				{...this.props}
-			>
+			<Box {...this.props}>
 				<span style={{
 					fontWeight: "800",
 					textShadow: "1px 1px 2px rgba(255,255,255,0.5)",
@@ -165,15 +161,14 @@ class Expanded extends React.Component {
 			<Flex column>
 				<input className="para1" type="text" placeholder="email" style={{border:"0px", padding:"1px"}}/>
 				<Flex m={1} row>
-					{['Counseling', 'Nursing', 'Clerical', 'Management'].map(
-						ele =>
+					{['Counseling', 'Nursing', 'Clerical', 'Management'].map(ele =>
 							<span className="para1" style={{fontSize: "0.5em"}}>
 								<input onClick={this.handleClick} key={ele} type="checkbox" />
 								{ele}
 							</span>
 						)}
 				</Flex>
-				<button style={{border:"none", backgroundColor: "#D81E5B", width: "100px"}}type="button" >Send</button>
+				<button style={{border:"none", backgroundColor: "#D81E5B", width: "100px"}} type="button" >Send</button>
 			</Flex>
 		</Box>
 		);

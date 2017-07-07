@@ -1,11 +1,6 @@
 .App {
   text-align: center;
-	background: #5b868c;
-}
-
-.App-logo {
-  animation: App-logo-spin infinite 30s linear;
-  height: 80px;
+	background: #2b2e31;
 }
 
 .App-intro {
@@ -16,7 +11,8 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }*/
-
+/*rgb(240, 84, 79)
+rgb(238, 238, 238)*/
 .header1 {
 	font-family: 'Overpass', serif;
 }
@@ -37,6 +33,5 @@ body {
 
 a {
 	color: #31626c;
-	text-decoration: none;
 	text-shadow: #CCC 1px 0 10px;
 }
