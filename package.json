@@ -1,6 +1,6 @@
 {
   "name": "goodsam",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
   "devDependencies": {
     "react-scripts": "0.6.1"
@@ -25,5 +25,5 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
-  "homepage": "https://reallyely.github.io/my-app"
+  "homepage": "https://reallyely.github.io/"
 }
