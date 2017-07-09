@@ -35,7 +35,10 @@ class Events extends React.Component {
 		if (this.state.loading === false) {
 			return (
 				<div>
-					<AnEvent data={this.state.event}/>
+					{this.state.event
+						? <AnEvent data={this.state.event}/>
+						: null
+					}
 				</div>
 			);
 		} else {

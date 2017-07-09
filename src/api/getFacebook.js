@@ -2,7 +2,7 @@ import axios from 'axios';
 
 const fb = 'https://graph.facebook.com/v2.8'
 const pageID = '245518842150454'
-const accessToken = 'access_token=1090962680953288|s5T7-lrv6xwk7ED54LAi1Ud_Lgc'
+const accessToken = 'access_token=1090962680953288|493fd3b7d2a22a8fdbc1915190748104'
 
 
 function getPosts() {
@@ -40,8 +40,8 @@ function getEvents() {
 	return axios.get(`${fb}/${pageID}?fields=events.limit(1){${fields.join(',')}}&${accessToken}`)
 }
 
-function getPhotos() {
-	return axios.get(`${fb}/729489963753337/photos?type=uploaded&fields=images{source}&${accessToken}`)
-}
+// function getPhotos() {
+// 	return axios.get(`${fb}/729489963753337/photos?type=uploaded&fields=images{source}&${accessToken}`)
+// }
 
-export {getPosts, getEvents, getPhotos}
+export {getPosts, getEvents}

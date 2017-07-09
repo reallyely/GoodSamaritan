@@ -8,8 +8,8 @@ const AnEvent = ({data}) => {
 		description,
 		start_time,
 		place: {name:loc},
-		cover,
-		attending_count,
+		// cover,
+		// attending_count,
 		ticket_uri
 	} = data
 
@@ -38,7 +38,7 @@ const AnEvent = ({data}) => {
 					<Box style={{fontSize:"2rem"}}>
 						{moment(start_time).format('DD MMM').toUpperCase()}
 					</Box>
-					<Box m={-1} style={{fontSize:"2rem"}}>
+					<Box style={{fontSize:"2rem"}}>
 						{moment(start_time).format('hh:mmA')}
 					</Box>
 				</Box>

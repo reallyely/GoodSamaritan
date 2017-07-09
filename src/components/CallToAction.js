@@ -1,7 +1,6 @@
 import React from 'react';
 import {Flex, Box} from 'reflexbox';
 import TransitionGroup from 'react-addons-transition-group'
-import anime from 'animejs';
 import {findDOMNode} from 'react-dom';
 import TweenMax from 'gsap';
 import FontAwesome from 'react-fontawesome';

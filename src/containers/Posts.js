@@ -1,7 +1,7 @@
 import React from 'react';
 import {getPosts} from '../api/getFacebook';
 import Post from '../components/Post';
-import { Flex, Box } from 'reflexbox';
+import { Box } from 'reflexbox';
 
 class Posts extends React.Component {
 	constructor(props) {

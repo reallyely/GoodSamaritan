@@ -3,9 +3,9 @@ import React from 'react';
 import _ from 'lodash';
 
 import GoodSamWhite from '../../public/GoodSamWhite.png';
-import CallToAction from './CallToAction';
+// import CallToAction from './CallToAction';
 
-const Header = ({photo}) => {
+const Header = () => {
 	let style = {
 		appHeader: {
 			overflow: 'hidden',
@@ -22,7 +22,7 @@ const Header = ({photo}) => {
 			style={style.appHeader}
 		>
 			<Box>
-				<img src={GoodSamWhite} style={{maxWidth:"100%"}}/>
+				<img src={GoodSamWhite} style={{maxWidth:"100%"}} alt="Good Samaritan Free Clinic logo"/>
 			</Box>
 			<subtitle className="header1"
 				style={{

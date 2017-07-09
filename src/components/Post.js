@@ -5,12 +5,12 @@ import moment from 'moment';
 const Post = ({data}) => {
 	let {
 		message,
-		status_type,
+		// status_type,
 		updated_time,
-		object_id,
+		// object_id,
 		full_picture,
 		link,
-		from,
+		// from,
 		name,
 		description
 	} = data
@@ -30,13 +30,12 @@ const Post = ({data}) => {
 			<Flex
 				m={1}
 				p={1}
-				row
 				justify="flex-end">
 				<h3 style={{margin: 0, padding: 0}} className="header1">{moment(updated_time).format('dddd, DD MMMM YYYY')}</h3>
 			</Flex>
 			{full_picture
 					? <Flex column>
-							<a href={link}><img src={full_picture} style={{maxWidth: '100%'}}/></a>
+							<a href={link}><img src={full_picture} style={{maxWidth: '100%'}} alt={description}/></a>
 							<Box className="para1" align="flex-start" style={{fontSize: ".75rem"}}>
 								{`From ${name}`}
 								{description ? `: ${description}` : null}
@@ -66,9 +65,5 @@ const Post = ({data}) => {
 		</Flex>
 	)
 }
-
-Post.propTypes = {
-	data: React.PropTypes.object.isRequired
-};
 
 export default Post;
