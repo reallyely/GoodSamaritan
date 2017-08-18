@@ -26,7 +26,7 @@ function getPosts() {
 	);
 }
 
-function getEvents() {
+function getEvents(limit) {
 	let fields = [
 		'name',
 		'description',
@@ -37,7 +37,7 @@ function getEvents() {
 		'ticket_uri',
 	];
 
-	return axios.get(`${fb}/${pageID}?fields=events.limit(1){${fields.join(',')}}&${accessToken}`)
+	return axios.get(`${fb}/${pageID}/events?limit=${limit}&time_filter=upcoming&fields=${fields.join(',')}&${accessToken}`)
 }
 
 // function getPhotos() {

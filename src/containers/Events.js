@@ -1,32 +1,32 @@
-import { getEvents } from '../api/getFacebook';
+import { getEvents } from '../api/getFacebook'
 import AnEvent from '../components/AnEvent'
+import { sortBy, compose, prop, head } from 'ramda'
 
 import React from 'react';
+
+const toDate = dateString => new Date(dateString)
+const byStartDate = compose(toDate, prop('start_time'))
+const startAsc = sortBy(byStartDate)
 
 class Events extends React.Component {
 	constructor(props) {
 		super(props);
 
 		this.state = {
-			events: [],
+			event: {},
 			loading: true
 		}
 	}
 	componentWillMount() {
-		getEvents()
+		getEvents(2)
 			.then(res => {
-				let events = res.data.events.data
-				let event = Array.isArray(events) ? events[0] : events
-
-				if (!new Date(event.start_time) < new Date()) {
-					event = undefined
-				}
+				let events = startAsc(res.data.data)
+				let event = head(events)
 
 				this.setState({
 					event,
 					loading: false
 				});
-				return res;
 			})
 			.catch(console.log)
 	}

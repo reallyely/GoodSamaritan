@@ -7,7 +7,7 @@ const AnEvent = ({data}) => {
 		name,
 		description,
 		start_time,
-		place: {name:loc},
+		place,
 		// cover,
 		// attending_count,
 		ticket_uri
@@ -22,38 +22,55 @@ const AnEvent = ({data}) => {
 		>
 			<Flex className="header1"
 				mb={2} pb={2}
-				align="stretch"
-				justify="space-around"
+				justify="space-between"
 				wrap
 				style={{
 					fontSize: "2rem",
 					borderBottom: "thin solid #AAA",
 				}}
 			>
-				<Box pr={3} column
+				{/* {JSON.stringify(BoxPM(<Box> Test </Box>))} */}
+				<Flex
+					column
+					p={1}
 					style={{
-						borderRight:"thin solid #AAA",
-				}}
-			>
+						flex: "1"
+					}}
+				>
 					<Box style={{fontSize:"2rem"}}>
-						{moment(start_time).format('DD MMM').toUpperCase()}
+						{moment(start_time).format('DD MMM YY').toUpperCase()}
 					</Box>
 					<Box style={{fontSize:"2rem"}}>
 						{moment(start_time).format('hh:mmA')}
 					</Box>
-				</Box>
-				<Box pr={3} align="flex-start"
+				</Flex>
+				<Flex
+					column
+					justify="center"
+					p={1}
 					style={{
-						borderRight:"thin solid #AAA",
+						flex: "1"
 					}}>
-					{ticket_uri
-						? <a href={ticket_uri}>{name}</a>
-						: <span>{name}</span>
-					}
-				</Box>
-				<Box>
-					{loc}
-				</Box>
+					<div>
+						{ticket_uri
+							? <a href={ticket_uri}>{name}</a>
+							: <span>{name}</span>
+						}
+					</div>
+				</Flex>
+				{place
+					? <Flex
+						p={1}
+						column
+						justify='center'
+						style={{
+							flex: "1",
+						}}
+					>
+						{place ? place.name : null}
+					</Flex>
+					: null
+				}
 			</Flex>
 			<Box className="para1"
 				style={{
