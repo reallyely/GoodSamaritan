@@ -16,6 +16,7 @@ const Post = ({data}) => {
 	} = data
 
 	return (
+
 		<Flex
 			mt={2}
 			mb={2}

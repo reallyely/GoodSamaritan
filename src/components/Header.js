@@ -5,7 +5,7 @@ import _ from 'lodash';
 import GoodSamWhite from '../../public/GoodSamWhite.png';
 // import CallToAction from './CallToAction';
 
-const Header = () => {
+const Header = ({location, phone, generalInfo}) => {
 	let style = {
 		appHeader: {
 			overflow: 'hidden',
@@ -32,8 +32,8 @@ const Header = () => {
 			>
 				Urgent, Chronic, and Spiritual care
 			</subtitle>
-			<subtitle className="header1">121 N Queen St, Martinsburg, West Virginia</subtitle>
-			<subtitle className="header1">(304) 264-4049</subtitle>
+			<subtitle className="header1">{location.street}, {location.city}, {location.state}</subtitle>
+			<subtitle className="header1">{phone}</subtitle>
 			<subtitle className="header1" style={{fontSize: "1.5rem", paddingTop:"2rem"}}>Hours of Operation</subtitle>
 			<subtitle className="header1">Wednesdays and 1st Thursdays at 5:00pm</subtitle>
 			<subtitle className="header1">2nd Monday at Back Creek Valley Full Gospel Church at 5:30pm</subtitle>
