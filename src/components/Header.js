@@ -35,9 +35,9 @@ const Header = ({location, phone, generalInfo}) => {
 			<subtitle className="header1">{location.street}, {location.city}, {location.state}</subtitle>
 			<subtitle className="header1">{phone}</subtitle>
 			<subtitle className="header1" style={{fontSize: "1.5rem", paddingTop:"2rem"}}>Hours of Operation</subtitle>
-			<subtitle className="header1">Wednesdays and 1st Thursdays at 5:00pm</subtitle>
+			<subtitle className="header1">1st Tuesday at 5:00pm</subtitle>
+			<subtitle className="header1">Wednesdays and at 5:00pm</subtitle>
 			<subtitle className="header1">2nd Monday at Back Creek Valley Full Gospel Church at 5:30pm</subtitle>
-			<subtitle className="header1">4th Monday at Immanuel House at 6:30pm</subtitle>
 			<subtitle className="header1"><strong>No Appointment necessary</strong></subtitle>
 		</Flex>
 	)
