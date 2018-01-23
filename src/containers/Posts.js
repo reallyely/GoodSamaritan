@@ -34,9 +34,7 @@ class Posts extends React.Component {
 					{
 						this.state.posts
 							.filter(({ message, description, full_picture }) => message || description || full_picture)
-							.map((post, i) => {
-								return (<Post key={i} data={post} />)
-							})
+							.map((post, i) => <Post key={i} data={post} />)
 					}
 				</Box>
 			);

@@ -38,7 +38,7 @@ const Post = ({data}) => {
 					? <Flex column>
 							<a href={link}><img src={full_picture} style={{maxWidth: '100%'}} alt={description}/></a>
 							<Box className="para1" align="flex-start" style={{fontSize: ".75rem"}}>
-								{`From ${name}`}
+								{name ? `From ${name}` : null}
 								{description ? `: ${description}` : null}
 							</Box>
 						</Flex>

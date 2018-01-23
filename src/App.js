@@ -38,7 +38,7 @@ class App extends Component {
   render() {
     return (
       <Flex column align="center" className="App" style={style}>
-				<Header location={this.state.location} phone={this.state.phone} />
+				<Header className="container" location={this.state.location} phone={this.state.phone} />
 				<Flex className="container body" justify="center" align="center" m={2} column>
 					<Events></Events>
 					<Posts></Posts>
