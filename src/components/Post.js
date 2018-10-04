@@ -1,6 +1,7 @@
 import React from 'react';
 import { Flex, Box } from 'reflexbox';
 import moment from 'moment';
+import utils from '../common/utils';
 
 const Post = ({data}) => {
 	let {
@@ -14,6 +15,8 @@ const Post = ({data}) => {
 		name,
 		description
 	} = data
+
+	const URL_REG_EX = new RegExp(utils.regExp.url);
 
 	return (
 
@@ -54,15 +57,20 @@ const Post = ({data}) => {
 							textAlign:'left',
 						}}>
 							{message.split("\n").map((item, key) => (
-							<span className="post-message" key={key}>
-								{item}
-								<br/>
-							</span>
+								URL_REG_EX.test(item) ? 
+								<a className="post-message" key={key} href={item} target="_blank">
+									{item}
+									<br/>
+								</a>
+								:
+								<span className="post-message" key={key}>
+									{item}
+									<br/>
+								</span>
 							))}
 						</Box>
 					: null
 				}
-
 		</Flex>
 	)
 }
