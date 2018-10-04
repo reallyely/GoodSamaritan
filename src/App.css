@@ -18,7 +18,7 @@ rgb(238, 238, 238)*/
 }
 
 .para1 {
-	font-family: 'Open Sans', serif;
+  font-family: 'Open Sans', serif;
 }
 
 .container {
@@ -34,4 +34,31 @@ body {
 a {
 	color: #31626c;
 	text-shadow: #CCC 1px 0 10px;
+}
+
+.site-footer {
+  height: 1rem;
+  padding: 0.6rem;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.donate--top {
+  display: none;
+}
+
+.post-message {
+  word-break: break-word;
+}
+
+@media screen and (min-width: 768px) {
+  .donate--banner {
+    display: none;
+  }
+  
+  .donate--top {
+    padding: 0.6rem;
+    display: block;
+    float: right;
+  }
 }

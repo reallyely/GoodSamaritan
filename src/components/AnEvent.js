@@ -64,7 +64,7 @@ const AnEvent = ({data}) => {
 						column
 						justify='center'
 						style={{
-							flex: "1",
+							flex: "1"
 						}}
 					>
 						{place ? place.name : null}
@@ -74,7 +74,7 @@ const AnEvent = ({data}) => {
 			</Flex>
 			<Box className="para1"
 				style={{
-					textAlign: "left",
+					textAlign: "left"
 				}}
 			>
 				{description}

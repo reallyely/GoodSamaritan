@@ -54,7 +54,7 @@ const Post = ({data}) => {
 							textAlign:'left',
 						}}>
 							{message.split("\n").map((item, key) => (
-							<span key={key}>
+							<span className="post-message" key={key}>
 								{item}
 								<br/>
 							</span>
