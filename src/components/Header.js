@@ -2,7 +2,7 @@ import {Flex, Box} from 'reflexbox';
 import React from 'react';
 import _ from 'lodash';
 
-import GoodSamWhite from '../../public/GoodSamWhite.png';
+import GoodSamWhiteV2 from '../../public/Good-Samaritan-Logo-v3-1-NoBG-WhiteTxt.png';
 // import CallToAction from './CallToAction';
 
 const Header = ({location, phone, generalInfo}) => {
@@ -21,7 +21,7 @@ const Header = ({location, phone, generalInfo}) => {
 			style={style.appHeader}
 		>
 			<Box>
-				<img src={GoodSamWhite} style={{maxWidth:"100%"}} alt="Good Samaritan Free Clinic logo"/>
+				<img src={GoodSamWhiteV2} style={{maxWidth:"100%"}} alt="Good Samaritan Free Clinic logo"/>
 			</Box>
 			
 			<subtitle className="header1"
