@@ -1,6 +1,6 @@
 import { Flex, Box } from "reflexbox";
 import React from "react";
-import GoodSamWhite from "../images/GoodSamWhite.png";
+import GoodSamWhite from "../images/Good-Samaritan-Logo-v3-1-NoBG-WhiteTxt.png";
 import { DonateHeader } from "./Donate";
 // import CallToAction from './CallToAction';
 
