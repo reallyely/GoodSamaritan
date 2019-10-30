@@ -1,6 +1,6 @@
 .App {
   text-align: center;
-	background: #2b2e31;
+  background: #2b2e31;
 }
 
 .App-intro {
@@ -14,7 +14,7 @@
 /*rgb(240, 84, 79)
 rgb(238, 238, 238)*/
 .header1 {
-	font-family: 'Overpass', serif;
+  font-family: 'Overpass', serif;
 }
 
 .para1 {
@@ -22,18 +22,19 @@ rgb(238, 238, 238)*/
 }
 
 .container {
-	max-width: 960px;
+  max-width: 960px;
 }
 
 body {
   margin: 0;
   padding: 0;
   font-size: 1.2rem;
+  background-color: #2b2e31
 }
 
 a {
-	color: #31626c;
-	text-shadow: #CCC 1px 0 10px;
+  color: #31626c;
+  text-shadow: #CCC 1px 0 10px;
 }
 
 .site-footer {
@@ -55,10 +56,10 @@ a {
   .donate--banner {
     display: none;
   }
-  
+
   .donate--top {
     padding: 0.6rem;
-    display: block;
-    float: right;
+    display: flex;
+    background: transparent
   }
 }
